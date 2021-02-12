@@ -7,7 +7,6 @@
 import datetime
 import uuid
 
-
 class BaseModel():
     """Base class for the console
 
@@ -27,7 +26,7 @@ class BaseModel():
 
     def save(self):
         """saves the instance and updated the updated_at time"""
-        self.updated_at = datetime.datetime
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
         """return the dictionary of the instance"""
@@ -35,3 +34,4 @@ class BaseModel():
         inst_dict["__class__"] = self.__class__.__name__
         inst_dict["created_at"] = self.created_at.isoformat()
         inst_dict["updated_at"] = self.updated_at.isoformat()
+        return inst_dict
