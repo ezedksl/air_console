@@ -5,7 +5,7 @@
 from datetime import datetime
 import uuid
 import models
-# from models.engine.file_storage import storage
+
 
 class BaseModel():
     """Base class for the console
@@ -15,7 +15,7 @@ class BaseModel():
         """instance initiation method
 
         """
-        if len(kwargs) > 0:
+        if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key == "created_at" or key == "updated_at":
@@ -52,3 +52,4 @@ class BaseModel():
         inst_dict["created_at"] = self.created_at.isoformat()
         inst_dict["updated_at"] = self.updated_at.isoformat()
         return inst_dict
+
