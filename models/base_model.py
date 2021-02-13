@@ -16,8 +16,8 @@ class BaseModel():
         """
         if len(kwargs) > 0:
             for key, value in kwargs.items():
-                if key is not '__class__':
-                    if key is "created_at" or key is "updated_at":
+                if key != '__class__':
+                    if key == "created_at" or key == "updated_at":
                         setattr(self, key, datetime.
                                 strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
                     else:
@@ -44,7 +44,7 @@ class BaseModel():
         """return the dictionary of the instance
 
         """
-        inst_dict = self.__dict__
+        inst_dict = dict(self.__dict__)
         #This is the fix we need:
         # inst_dict = dict(self.__dict__)
         inst_dict["__class__"] = self.__class__.__name__
