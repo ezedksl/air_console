@@ -52,4 +52,3 @@ class BaseModel():
         inst_dict["created_at"] = self.created_at.isoformat()
         inst_dict["updated_at"] = self.updated_at.isoformat()
         return inst_dict
-
