@@ -28,3 +28,6 @@ class TestFileStorage(unittest.TestCase):
         # Test the all() method through the storage in INIT
         objects = storage.all() # In this case this shouldn't be empty        
         self.assertTrue(len(objects) > 0)
+
+if __name__ == '__main__':
+    unittest.main()
