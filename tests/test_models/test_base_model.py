@@ -53,5 +53,6 @@ class TestBaseModel(unittest.TestCase):
         dict_2 = inst_1.to_dict()
         self.assertNotEqual(dict_1["updated_at"], dict_2["updated_at"])
 
+
 if __name__ == '__main__':
     unittest.main()
