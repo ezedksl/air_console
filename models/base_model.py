@@ -1,10 +1,6 @@
-#!/usr/bin/python3
-"""Module that defines all common attributes/methods for other classes
-
-"""
 from datetime import datetime
 import uuid
-import models
+from engine.file_storage import storage
 
 
 class BaseModel():
