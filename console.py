@@ -21,6 +21,9 @@ class HBNBCommand(cmd.Cmd):
                 newinstance = arg[2]
         except NameError:
             print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+        
 
 
     def do_quit(self, arg):
