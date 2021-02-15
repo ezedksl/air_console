@@ -43,7 +43,7 @@ class TestFileStorage(unittest.TestCase):
         list_objs = list(all_objs.values())
         self.assertIn(inst2, list_objs)
 
-        eload() method
+        # Test reload() method
         storage.reload()  # Load the dickts in file.json
         new_all_objs = storage.all()  # Get the return of the __objects
         # All_objs == new_all_objs? Answers below
