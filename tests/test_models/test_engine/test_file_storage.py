@@ -50,6 +50,17 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(len(all_objs), len(new_all_objs))
         # Yes, indeed. Yeppity!
 
+        # Test repetition of objects. all_objs is the original dictionary.
+        storage.new(inst2)
+        inst2.save()
+        objs = storage.all()
+        self.assertEqual(len(objs), len(all_objs))
+        # Object are overwritten/updated
+
+        # Test non-BaseModel object
+        x = 42
+        with self.assertRaises(AttributeError):
+            storage.new(x)  # This fails because x has no id attribute
 
 if __name__ == '__main__':
     unittest.main()

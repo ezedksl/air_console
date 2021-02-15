@@ -12,26 +12,33 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        """Exit the console."""
+        """Exit the console.
+        """
         return True
 
     def do_EOF(self, arg):
-        """Exit the console when pressing Ctrl+D or typing "EOF"."""
+        """Exit the console when pressing Ctrl+D or typing "EOF".
+        """
         print()
         return True
 
     # Help updates: (end all of them with a new line)
     def help_quit(self):
+        """Help for quit command.
+        """
         print("Quit command to exit the program")
         print()
 
     def help_EOF(self):
+        """Help for EOF.
+        """
         print("Press Ctrl+'D' to exit the program")
         print()
 
     # Miscellaneous code:
     def emptyline(self):
-        """What it does with enters and empty lines."""
+        """What it does with enters and empty lines.
+        """
         pass
 
 
