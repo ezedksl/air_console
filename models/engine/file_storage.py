@@ -27,8 +27,12 @@ class FileStorage:
 
     def save(self):
         objects = dict(FileStorage.__objects)
+        serialObj = {}
+        for key in objects:
+            serialObj[key] = json.dumps(key)
+
         with open(FileStorage.__file_path, 'w') as jsfile:
-            json.dump(objects, jsfile)
+            json.dump(serialObj, jsfile)
 
     def reload(self):
         try:
