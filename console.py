@@ -11,6 +11,18 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def do_create(self, arg):
+        """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id.
+
+        """
+        arg = arg.split()
+        if len(arg > 1):
+            try:
+                newinstance = arg[2]
+        except NameError:
+            print("** class doesn't exist **")
+
+
     def do_quit(self, arg):
         """Exit the console.
         """
